@@ -8,120 +8,128 @@
   var floatBtn = document.getElementById('whatsappFloat');
   var header = document.getElementById('header');
   var isModalOpen = false;
-  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ===== Header Scroll State ===== */
-  function initHeaderScroll() {
-    function update() {
-      if (!header) return;
-      header.classList.toggle('scrolled', window.scrollY > 60);
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    update();
+  /* ===== prefers-reduced-motion ===== */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (typeof gsap !== 'undefined') gsap.globalTimeline.timeScale(0);
   }
 
   /* ===== Lenis Smooth Scroll ===== */
+  var lenis = null;
   function initLenis() {
     if (typeof Lenis === 'undefined') return;
+    lenis = new Lenis({ lerp: 0.08, smooth: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
 
-    var lenis = new Lenis({
-      duration: 1.2,
-      easing: function (t) { return 1 - Math.pow(1 - t, 3); }
-    });
-
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
+  /* ===== Navbar Scroll ===== */
+  function initNavScroll() {
+    if (lenis) {
+      lenis.on('scroll', function (e) {
+        if (header) header.classList.toggle('scrolled', e.scroll > 60);
+      });
     } else {
-      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-      requestAnimationFrame(raf);
+      function update() {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 60);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
     }
-
-    lenis.on('scroll', function (e) {
-      if (header) header.classList.toggle('scrolled', e.scroll > 60);
-    });
   }
 
   /* ===== GSAP Animations ===== */
   function initGSAP() {
-    if (prefersReducedMotion) return;
     if (typeof gsap === 'undefined') return;
     if (typeof ScrollTrigger === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    /* --- Hero: Title SplitText --- */
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    var mm = gsap.matchMedia();
+    var isDesktop = '(min-width: 768px)';
+    var isMobile = '(max-width: 767px)';
+
+    /* --- Hero: Title SplitText (desktop & mobile) --- */
     var heroTitle = document.querySelector('.hero__title');
     if (heroTitle && typeof SplitText !== 'undefined') {
-      var split = new SplitText(heroTitle, { type: 'chars' });
-      gsap.from(split.chars, {
-        y: 80,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        stagger: 0.035
+      mm.add(isDesktop, function () {
+        var split = new SplitText(heroTitle, { type: 'chars' });
+        gsap.from(split.chars, {
+          y: 100, opacity: 0, rotateX: -40,
+          duration: 0.9, ease: 'power4.out',
+          stagger: 0.02
+        });
+      });
+      mm.add(isMobile, function () {
+        var split = new SplitText(heroTitle, { type: 'chars' });
+        gsap.from(split.chars, {
+          y: 60, opacity: 0,
+          duration: 0.7, ease: 'power3.out',
+          stagger: 0.015
+        });
       });
     }
 
     /* --- Hero: Subtitle --- */
     gsap.from('.hero__subtitle', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.4,
-      ease: 'power2.out'
+      y: 20, opacity: 0,
+      duration: 0.6, delay: 0.5, ease: 'power2.out'
     });
 
     /* --- Hero: Button --- */
-    gsap.from('.hero__actions .btn', {
-      scale: 0.9,
-      opacity: 0,
-      duration: 0.5,
-      delay: 0.7,
-      ease: 'back.out(1.4)'
+    gsap.from('.hero__actions .btn--xl', {
+      scale: 0.85, opacity: 0,
+      duration: 0.5, delay: 0.75, ease: 'back.out(1.7)'
+    });
+
+    /* --- Hero: Note --- */
+    gsap.from('.hero__note', {
+      opacity: 0, duration: 0.4, delay: 1
     });
 
     /* --- Credibility Counter --- */
     var credNumbers = document.querySelectorAll('.credibility__number');
-    credNumbers.forEach(function (el) {
-      var text = el.textContent.trim();
-      var prefix = '', suffix = '', targetNum = 0;
-      var isString = text === 'Hoy';
-
-      if (!isString) {
-        var match = text.match(/^([+\-$]?)([\d]+)(%?)$/);
-        if (match) {
-          prefix = match[1] || '';
-          targetNum = parseInt(match[2], 10);
-          suffix = match[3] || '';
-        }
-      }
-
+    if (credNumbers.length) {
       ScrollTrigger.create({
-        trigger: el,
+        trigger: '.credibility__grid',
         start: 'top 85%',
         once: true,
         onEnter: function () {
-          if (isString) {
-            gsap.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 });
-          } else {
-            var obj = { val: 0 };
-            gsap.to(obj, {
-              val: targetNum,
-              duration: 1.5,
-              ease: 'power2.out',
-              onUpdate: function () {
-                el.textContent = prefix + Math.round(obj.val) + suffix;
-              },
-              onComplete: function () {
-                el.textContent = text;
+          credNumbers.forEach(function (el) {
+            var text = el.textContent.trim();
+            var prefix = '', suffix = '', targetNum = 0;
+            var isString = text === 'Hoy';
+
+            if (!isString) {
+              var match = text.match(/^([+\-$]?)([\d]+)(%?)$/);
+              if (match) {
+                prefix = match[1] || '';
+                targetNum = parseInt(match[2], 10);
+                suffix = match[3] || '';
               }
-            });
-          }
+            }
+
+            if (isString) {
+              gsap.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 });
+            } else {
+              var obj = { val: 0 };
+              gsap.to(obj, {
+                val: targetNum, duration: 2, ease: 'power2.out', snap: 1,
+                onUpdate: function () {
+                  el.textContent = prefix + Math.round(obj.val) + suffix;
+                },
+                onComplete: function () {
+                  el.textContent = text;
+                }
+              });
+            }
+          });
         }
       });
-    });
+    }
 
-    /* --- Pricing Cards Stagger --- */
+    /* --- Pricing Cards --- */
     var pricingCards = document.querySelectorAll('.pricing__card');
     if (pricingCards.length) {
       ScrollTrigger.create({
@@ -130,30 +138,24 @@
         once: true,
         onEnter: function () {
           gsap.from(pricingCards, {
-            y: 40,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: 'power2.out'
+            y: 50, opacity: 0,
+            duration: 0.7, stagger: 0.15, ease: 'power3.out'
           });
         }
       });
     }
 
-    /* --- Discount Percentages Bounce --- */
+    /* --- Discount Percentages --- */
     var discountPcts = document.querySelectorAll('.discount__pct');
     if (discountPcts.length) {
       ScrollTrigger.create({
-        trigger: discountPcts[0].parentElement,
+        trigger: '.discount__timeline',
         start: 'top 80%',
         once: true,
         onEnter: function () {
           gsap.from(discountPcts, {
-            scale: 0.5,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'elastic.out(1, 0.4)'
+            scale: 0, opacity: 0,
+            duration: 1.2, stagger: 0.2, ease: 'elastic.out(1, 0.5)'
           });
         }
       });
@@ -168,11 +170,37 @@
         once: true,
         onEnter: function () {
           gsap.from(stepsCards, {
-            x: -30,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.2,
-            ease: 'power2.out'
+            x: -30, opacity: 0,
+            duration: 0.6, stagger: 0.2, ease: 'power2.out'
+          });
+        }
+      });
+    }
+
+    /* --- Generic [data-animate] --- */
+    var genericEls = document.querySelectorAll('[data-animate]');
+    var excludeSelectors = [
+      '.credibility__grid', '.pricing__grid', '.discount__timeline',
+      '.steps__grid', '.faq__grid', '.pricing__card', '.steps__card',
+      '.discount__pct', '.credibility__number'
+    ];
+    var filtered = [];
+    genericEls.forEach(function (el) {
+      var skip = false;
+      excludeSelectors.forEach(function (sel) {
+        if (el.matches && el.matches(sel)) skip = true;
+      });
+      if (!skip) filtered.push(el);
+    });
+
+    if (filtered.length) {
+      ScrollTrigger.batch(filtered, {
+        start: 'top 85%',
+        once: true,
+        onEnter: function (batch) {
+          gsap.from(batch, {
+            y: 30, opacity: 0,
+            duration: 0.7, stagger: 0.1, ease: 'power2.out'
           });
         }
       });
@@ -213,8 +241,8 @@
   });
 
   /* ===== Init ===== */
-  initHeaderScroll();
   initLenis();
+  initNavScroll();
   initGSAP();
 
 })();
