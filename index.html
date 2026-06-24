@@ -19,48 +19,61 @@
 </head>
 <body>
 
+  <!-- Skip to main content para lectores de pantalla -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
   <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <nav class="nav">
+  <header class="header" id="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
       <div class="nav__inner container">
-        <a href="#" class="nav__logo">ICS Salud</a>
-        <a href="#" class="nav__cta btn btn--accent btn--sm" onclick="openWhatsAppModal(event)">WhatsApp</a>
+        <a href="#" class="nav__logo" aria-label="ICS Salud - Inicio">ICS Salud</a>
+        <a href="#" class="nav__cta btn btn--accent btn--sm" onclick="openWhatsAppModal(event)" aria-label="Contactar por WhatsApp">WhatsApp</a>
       </div>
     </nav>
   </header>
 
+  <!-- Main content -->
+  <main id="main-content">
+
   <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__bg-grid"></div>
-      <div class="hero__bg-glow"></div>
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__photo" aria-hidden="true">
+      <img src="Family_walking_on_beach_202606241111.jpeg" alt="" fetchpriority="high">
+      <div class="hero__photo-overlay"></div>
     </div>
     <div class="container hero__inner">
-      <div class="hero__content">
-        <h1 class="hero__title">
+      <div class="hero__panel">
+        <div class="hero__ticker" aria-hidden="true">
+          <span>Asesores independientes</span>
+          <span class="hero__ticker-dot">·</span>
+          <span>Gestión 100% digital</span>
+          <span class="hero__ticker-dot">·</span>
+          <span>Sin costo de asesoramiento</span>
+        </div>
+        <h1 class="hero__title" id="hero-title">
           Tu prepaga,<br>
           <span class="hero__title-accent">sin vueltas</span>
         </h1>
         <p class="hero__subtitle">
-          Somos asesores independientes de <strong>Prevención Salud</strong> &mdash; te asesoramos gratis y gestionamos todo por WhatsApp, de igual a igual.
+          Somos asesores independientes de <strong>Prevención Salud</strong> — te asesoramos gratis y gestionamos todo por WhatsApp, de igual a igual.
         </p>
         <div class="hero__actions">
           <a href="#" class="btn btn--accent btn--xl" onclick="openWhatsAppModal(event)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Quiero información
+            Quiero mi cotización
           </a>
-          <p class="hero__note">Sin compromiso. Respondemos en el día.</p>
+          <a href="#cambio" class="btn btn--ghost">Consultas generales</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CREDIBILITY ===== -->
-  <section class="credibility" id="credibilidad">
+  <section class="credibility" id="credibilidad" aria-label="Indicadores de confianza">
     <div class="container">
       <div class="credibility__grid" data-animate>
         <div class="credibility__item">
-          <span class="credibility__number">+1500</span>
+          <span class="credibility__number" aria-label="Más de 1500">+1500</span>
           <span class="credibility__label">afiliados gestionados</span>
         </div>
         <div class="credibility__divider" aria-hidden="true"></div>
@@ -70,7 +83,7 @@
         </div>
         <div class="credibility__divider" aria-hidden="true"></div>
         <div class="credibility__item">
-          <span class="credibility__number">$0</span>
+          <span class="credibility__number" aria-label="Cero pesos">$0</span>
           <span class="credibility__label">asesoramiento</span>
         </div>
         <div class="credibility__divider" aria-hidden="true"></div>
@@ -83,11 +96,11 @@
   </section>
 
   <!-- ===== PRICING ===== -->
-  <section class="pricing" id="precios">
+  <section class="pricing" id="precios" aria-labelledby="pricing-title">
     <div class="container">
       <div class="section__header" data-animate>
         <span class="section__tag">Precios</span>
-        <h2 class="section__title">Cuanto sale</h2>
+        <h2 class="section__title" id="pricing-title">Cuanto sale</h2>
         <p class="section__desc">Precios orientativos. Varían según edad, grupo familiar y si derivás aportes.</p>
       </div>
       <div class="pricing__grid" data-animate>
@@ -128,140 +141,222 @@
   </section>
 
   <!-- ===== DISCOUNT ===== -->
-  <section class="discount" id="descuento">
+  <section class="discount" id="descuento" aria-labelledby="discount-title">
     <div class="discount__bg" aria-hidden="true">
       <div class="discount__grid"></div>
     </div>
     <div class="container">
-      <div class="section__header section__header--light" data-animate>
-        <span class="section__tag section__tag--light">Descuento real</span>
-        <h2 class="section__title section__title--light">El descuento real</h2>
-        <p class="section__desc section__desc--light">No es una promo de ocasión &mdash; es la forma en que Prevención Salud incorpora nuevos afiliados.</p>
-      </div>
-      <div class="discount__timeline" data-animate>
-        <div class="discount__step">
-          <span class="discount__pct">50%</span>
-          <span class="discount__info">los primeros 3 meses</span>
+      <div class="discount__layout">
+
+        <!-- Columna contenido -->
+        <div class="discount__content">
+          <div class="section__header section__header--left" data-animate>
+            <span class="section__tag section__tag--light">Descuento real</span>
+            <h2 class="section__title section__title--light" id="discount-title">El descuento real</h2>
+            <p class="section__desc section__desc--light section__desc--left">No es una promo de ocasión &mdash; es la forma en que Prevención Salud incorpora nuevos afiliados.</p>
+          </div>
+          <div class="discount__timeline" data-animate>
+            <div class="discount__step">
+              <span class="discount__pct">50%</span>
+              <span class="discount__info">los primeros 3 meses</span>
+            </div>
+            <div class="discount__connector" aria-hidden="true">
+              <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
+                <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="discount__step">
+              <span class="discount__pct">30%</span>
+              <span class="discount__info">los siguientes 3 meses</span>
+            </div>
+            <div class="discount__connector" aria-hidden="true">
+              <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
+                <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="discount__step">
+              <span class="discount__pct">15%</span>
+              <span class="discount__info">los últimos 3 meses</span>
+            </div>
+          </div>
+          <div class="discount__conditions" data-animate>
+            <span class="discount__conditions-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </span>
+            <span><strong>Requisitos:</strong> derivar aportes (monotributo o relación de dependencia) y ser menor de 55 años.</span>
+          </div>
+          <div class="discount__action" data-animate>
+            <a href="#" class="btn btn--accent btn--lg" onclick="openWhatsAppModal(event)">Quiero aprovechar el descuento</a>
+          </div>
         </div>
-        <div class="discount__connector" aria-hidden="true">
-          <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
-            <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+
+        <!-- Columna imagen -->
+        <div class="discount__visual" data-animate>
+          <img
+            src="que_esten_sorprendidos_por_lso_202606241133.jpeg"
+            alt="Personas sorprendidas por los descuentos"
+            class="discount__photo"
+          >
         </div>
-        <div class="discount__step">
-          <span class="discount__pct">30%</span>
-          <span class="discount__info">los siguientes 3 meses</span>
-        </div>
-        <div class="discount__connector" aria-hidden="true">
-          <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
-            <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="discount__step">
-          <span class="discount__pct">15%</span>
-          <span class="discount__info">los últimos 3 meses</span>
-        </div>
-      </div>
-      <div class="discount__conditions" data-animate>
-        <span class="discount__conditions-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        </span>
-        <span><strong>Requisitos:</strong> derivar aportes (monotributo o relación de dependencia) y ser menor de 55 años.</span>
-      </div>
-      <div class="discount__action" data-animate>
-        <a href="#" class="btn btn--accent btn--lg" onclick="openWhatsAppModal(event)">Quiero aprovechar el descuento</a>
+
       </div>
     </div>
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="faq" id="cambio">
+  <section class="faq" id="cambio" aria-labelledby="faq-title">
     <div class="container">
-      <div class="section__header" data-animate>
-        <span class="section__tag">Venis de otra prepaga</span>
-        <h2 class="section__title">Respondemos tus dudas</h2>
-        <p class="section__desc">Las preguntas que te frenan, respondidas rápido.</p>
-      </div>
-      <div class="faq__grid" data-animate>
-        <article class="faq__item">
-          <div class="faq__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      <div class="faq__layout">
+
+        <!-- Columna imagen -->
+        <div class="faq__visual" data-animate>
+          <img
+            src="Flow_202606241143.jpeg"
+            alt="Diagrama de flujo mostrando el proceso de asesoramiento personalizado"
+            class="faq__photo"
+          >
+        </div>
+
+        <!-- Columna contenido -->
+        <div class="faq__body">
+          <div class="section__header section__header--left" data-animate>
+            <span class="section__tag">Venis de otra prepaga</span>
+            <h2 class="section__title" id="faq-title">Respondemos tus dudas</h2>
+            <p class="section__desc section__desc--left">Las preguntas que te frenan, respondidas rápido.</p>
           </div>
-          <div class="faq__content">
-            <h3 class="faq__q">Pierdo días de cobertura</h3>
-            <p class="faq__a">No. La cobertura es continua si gestionamos el pase correctamente. Nosotros nos encargamos de que no haya ningún salto.</p>
+          <div class="faq__grid" data-animate>
+            <article class="faq__item">
+              <div class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div class="faq__content">
+                <h3 class="faq__q">Pierdo días de cobertura</h3>
+                <p class="faq__a">No. La cobertura es continua si gestionamos el pase correctamente. Nosotros nos encargamos de que no haya ningún salto.</p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <div class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="faq__content">
+                <h3 class="faq__q">Qué pasa si tengo una patología</h3>
+                <p class="faq__a">Depende del caso. Te asesoramos sin compromiso y vemos qué opciones tenés. No hay obligación de nada.</p>
+              </div>
+            </article>
+            <article class="faq__item">
+              <div class="faq__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="faq__content">
+                <h3 class="faq__q">Es mucho trámite</h3>
+                <p class="faq__a">Nosotros hacemos todo. Vos solo firmás lo que corresponde y listo. No te llenamos de papeles.</p>
+              </div>
+            </article>
           </div>
-        </article>
-        <article class="faq__item">
-          <div class="faq__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="faq__action" data-animate>
+            <a href="#" class="btn btn--accent" onclick="openWhatsAppModal(event)">Consultame sin compromiso</a>
           </div>
-          <div class="faq__content">
-            <h3 class="faq__q">Qué pasa si tengo una patología</h3>
-            <p class="faq__a">Depende del caso. Te asesoramos sin compromiso y vemos qué opciones tenés. No hay obligación de nada.</p>
-          </div>
-        </article>
-        <article class="faq__item">
-          <div class="faq__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div class="faq__content">
-            <h3 class="faq__q">Es mucho trámite</h3>
-            <p class="faq__a">Nosotros hacemos todo. Vos solo firmás lo que corresponde y listo. No te llenamos de papeles.</p>
-          </div>
-        </article>
-      </div>
-      <div class="faq__action" data-animate>
-        <a href="#" class="btn btn--accent" onclick="openWhatsAppModal(event)">Consultame sin compromiso</a>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ===== STEPS ===== -->
-  <section class="steps" id="como-funciona">
+  <section class="steps" id="como-funciona" aria-labelledby="steps-title">
     <div class="container">
       <div class="section__header" data-animate>
         <span class="section__tag">Cómo funciona</span>
-        <h2 class="section__title">Así de simple</h2>
+        <h2 class="section__title" id="steps-title">Así de simple</h2>
         <p class="section__desc">Tres pasos y ya estás listo. Sin vueltas, sin papelerío.</p>
       </div>
       <div class="steps__grid" data-animate>
-        <div class="steps__card">
-          <div class="steps__num">
-            <span>1</span>
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
-              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+
+        <!-- Paso 1: WhatsApp -->
+        <div class="steps__card" data-step-bg="1">
+          <div class="steps__illo steps__illo--1" aria-hidden="true">
+            <!-- Teléfono con burbuja de chat WhatsApp -->
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Teléfono -->
+              <rect x="20" y="10" width="30" height="52" rx="5" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+              <rect x="25" y="16" width="20" height="32" rx="2" fill="#DBEAFE"/>
+              <circle cx="35" cy="55" r="2.5" fill="#2563EB" opacity="0.4"/>
+              <!-- Burbuja verde WhatsApp -->
+              <rect x="38" y="8" width="28" height="22" rx="10" fill="#10B981"/>
+              <path d="M38 26l-4 5 5-2" fill="#10B981"/>
+              <!-- Ícono WA simplificado -->
+              <path d="M52 14c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 3.9l-1.1 4 4.1-1.1c1.1.6 2.4.9 3.7.9 4.4 0 8-3.6 8-8s-3.6-7.7-7.7-7.7z" fill="white" opacity="0.9"/>
+              <path d="M56.5 22.5c-.2-.1-1.2-.6-1.4-.6-.2-.1-.3-.1-.5.1-.1.2-.5.6-.6.8-.1.1-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-.9-1.1-1.1-.1-.2 0-.3.1-.4l.3-.4c.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3-.1-.1-.5-1.1-.6-1.5-.2-.4-.3-.3-.5-.3h-.4c-.1 0-.4.1-.5.3-.2.2-.7.7-.7 1.7s.7 2 .8 2.1c.1.1 1.4 2.2 3.5 3 .5.2.9.3 1.2.4.5.2.9.1 1.3.1.4-.1 1.2-.5 1.4-1 .1-.5.1-.9.1-1-.1-.1-.2-.1-.4-.2z" fill="#10B981"/>
             </svg>
           </div>
+          <div class="steps__step-label">Paso 1</div>
           <h3 class="steps__title">Me mandás un mensaje</h3>
           <p class="steps__desc">Me contás tu situación y lo que estás buscando, sin vueltas. En criollo, sin formularios.</p>
         </div>
+
         <div class="steps__arrow" aria-hidden="true">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </div>
-        <div class="steps__card">
-          <div class="steps__num">
-            <span>2</span>
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
-              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+
+        <!-- Paso 2: Comparación de planes -->
+        <div class="steps__card" data-step-bg="2">
+          <div class="steps__illo steps__illo--2" aria-hidden="true">
+            <!-- Dos tarjetas de plan comparadas -->
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Tarjeta izquierda -->
+              <rect x="8" y="20" width="28" height="40" rx="6" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+              <rect x="13" y="27" width="18" height="3" rx="1.5" fill="#BFDBFE"/>
+              <rect x="13" y="33" width="14" height="2" rx="1" fill="#DBEAFE"/>
+              <rect x="13" y="37" width="16" height="2" rx="1" fill="#DBEAFE"/>
+              <rect x="13" y="41" width="12" height="2" rx="1" fill="#DBEAFE"/>
+              <!-- Precio izquierda -->
+              <rect x="13" y="47" width="18" height="7" rx="3" fill="#2563EB" opacity="0.15"/>
+              <rect x="16" y="49" width="12" height="3" rx="1.5" fill="#2563EB" opacity="0.5"/>
+              <!-- Tarjeta derecha (destacada) -->
+              <rect x="44" y="14" width="28" height="44" rx="6" fill="#2563EB"/>
+              <rect x="49" y="21" width="18" height="3" rx="1.5" fill="white" opacity="0.9"/>
+              <rect x="49" y="27" width="14" height="2" rx="1" fill="white" opacity="0.5"/>
+              <rect x="49" y="31" width="16" height="2" rx="1" fill="white" opacity="0.5"/>
+              <rect x="49" y="35" width="12" height="2" rx="1" fill="white" opacity="0.5"/>
+              <!-- Precio derecha -->
+              <rect x="49" y="41" width="18" height="10" rx="4" fill="white" opacity="0.15"/>
+              <rect x="52" y="44" width="12" height="4" rx="2" fill="white" opacity="0.8"/>
+              <!-- Badge "mejor" -->
+              <rect x="49" y="10" width="22" height="8" rx="4" fill="#10B981"/>
+              <rect x="52" y="12" width="16" height="4" rx="2" fill="white" opacity="0.9"/>
             </svg>
           </div>
+          <div class="steps__step-label">Paso 2</div>
           <h3 class="steps__title">Te cotizo los planes</h3>
           <p class="steps__desc">Te paso los planes que realmente te convienen según tu caso, no todo el catálogo.</p>
         </div>
+
         <div class="steps__arrow" aria-hidden="true">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </div>
-        <div class="steps__card">
-          <div class="steps__num">
-            <span>3</span>
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
-              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+
+        <!-- Paso 3: Cobertura activa -->
+        <div class="steps__card" data-step-bg="3">
+          <div class="steps__illo steps__illo--3" aria-hidden="true">
+            <!-- Escudo con tilde de aprobación -->
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Escudo -->
+              <path d="M40 8L16 18v18c0 14 10.5 26.5 24 30 13.5-3.5 24-16 24-30V18L40 8z" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Relleno interior escudo -->
+              <path d="M40 14L22 22v14c0 10.5 8 19.5 18 22.5 10-3 18-12 18-22.5V22L40 14z" fill="#DBEAFE"/>
+              <!-- Tilde grande -->
+              <path d="M28 40l8 9 16-17" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Destellos -->
+              <circle cx="62" cy="18" r="3" fill="#10B981" opacity="0.6"/>
+              <circle cx="68" cy="28" r="2" fill="#2563EB" opacity="0.4"/>
+              <circle cx="58" cy="12" r="1.5" fill="#10B981" opacity="0.4"/>
             </svg>
           </div>
+          <div class="steps__step-label">Paso 3</div>
           <h3 class="steps__title">Gestionamos el alta</h3>
           <p class="steps__desc">Nos encargamos de todo el papeleo con Prevención Salud. Vos no hacés nada más que firmar.</p>
         </div>
+
       </div>
       <div class="steps__action" data-animate>
         <a href="#" class="btn btn--primary btn--lg" onclick="openWhatsAppModal(event)">
@@ -273,36 +368,51 @@
   </section>
 
   <!-- ===== REFERRAL ===== -->
-  <section class="referral" id="referidos">
+  <section class="referral" id="referidos" aria-labelledby="referral-title">
     <div class="container">
-      <div class="section__header" data-animate>
-        <span class="section__tag">Referidos</span>
-        <h2 class="section__title">Ganá con nosotros</h2>
-        <p class="section__desc">Si conocés a alguien que necesite prepaga, te conviene contárselo.</p>
-      </div>
-      <div class="referral__card" data-animate>
-        <div class="referral__gift">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M12 7V4M12 4C12 2 14 2 14 4s-2 3-2 3M12 4C12 2 10 2 10 4s2 3 2 3"/><path d="M8 7v13M16 7v13"/><path d="M3 13h18"/></svg>
+      <div class="referral__layout">
+
+        <!-- Columna imagen -->
+        <div class="referral__visual" data-animate>
+          <img
+            src="persona_recomendando_a_un_amigo_202606241147.jpeg"
+            alt="Una persona recomendando el servicio a un amigo"
+            class="referral__photo"
+          >
         </div>
-        <p class="referral__copy">Conocés a alguien que necesite prepaga? Te conviene contárselo.</p>
-        <div class="referral__body">
-          <p>Si referís a alguien <strong>menor de 45 años</strong> que se afilia a Prevención Salud, recibís una <strong>gift card VISA</strong>.</p>
-          <p class="referral__nota">El referido no tiene que estar en mora.</p>
+
+        <!-- Columna contenido -->
+        <div class="referral__content" data-animate>
+          <div class="section__header section__header--left">
+            <span class="section__tag" style="background:rgba(255,255,255,0.15);color:#fff;">Referidos</span>
+            <h2 class="section__title section__title--light" id="referral-title">Ganá con nosotros</h2>
+            <p class="section__desc section__desc--light section__desc--left">Si conocés a alguien que necesite prepaga, te conviene contárselo.</p>
+          </div>
+          <div class="referral__card">
+            <div class="referral__gift">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M12 7V4M12 4C12 2 14 2 14 4s-2 3-2 3M12 4C12 2 10 2 10 4s2 3 2 3"/><path d="M8 7v13M16 7v13"/><path d="M3 13h18"/></svg>
+            </div>
+            <div class="referral__body">
+              <p>Si referís a alguien <strong>menor de 45 años</strong> que se afilia a Prevención Salud, recibís una <strong>gift card VISA</strong>.</p>
+              <p class="referral__nota">El referido no tiene que estar en mora.</p>
+            </div>
+            <a href="#" class="btn btn--accent referral__btn" onclick="openWhatsAppModal(event)">Quiero referir a alguien</a>
+          </div>
         </div>
-        <a href="#" class="btn btn--accent referral__btn" onclick="openWhatsAppModal(event)">Quiero referir a alguien</a>
+
       </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="cta-final" id="cta-final">
+  <section class="cta-final" id="cta-final" aria-labelledby="cta-title">
     <div class="cta-final__bg" aria-hidden="true">
       <div class="cta-final__grid"></div>
       <div class="cta-final__glow"></div>
     </div>
     <div class="container">
       <div class="cta-final__content" data-animate>
-        <h2 class="cta-final__title">Dudas? Escribime,<br>no comprometés nada</h2>
+        <h2 class="cta-final__title" id="cta-title">Dudas? Escribime,<br>no comprometés nada</h2>
         <p class="cta-final__desc">Te respondo al toque y vemos si te conviene o no. Si no es para vos, no pasa nada.</p>
         <a href="#" class="btn btn--accent btn--xl" onclick="openWhatsAppModal(event)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -312,8 +422,11 @@
     </div>
   </section>
 
+  </main>
+  <!-- Fin main content -->
+
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
         <div>
@@ -329,8 +442,8 @@
   </footer>
 
   <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
-  <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="openWhatsAppModal(event)" aria-label="Abrir WhatsApp">
-    <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+  <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="openWhatsAppModal(event)" aria-label="Contactar por WhatsApp - Abre ventana de opciones">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
