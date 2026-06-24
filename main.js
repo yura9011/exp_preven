@@ -41,14 +41,22 @@ document.fonts.ready.then(() => {
     .from('.hero__panel', { x: -30, opacity: 0, duration: 0.9, ease: 'power3.out' }, 0);
 
   // 6. Price cards
-  gsap.from('.pricing__card', {
-    scrollTrigger: { 
-      trigger: '.pricing__grid', 
-      start: 'top 95%',
-      once: true
-    },
-    y: 30, opacity: 0, stagger: 0.12, duration: 0.6, ease: 'power3.out'
-  });
+  const pricingCards = document.querySelectorAll('.pricing__card');
+  if (pricingCards.length > 0) {
+    gsap.from('.pricing__card', {
+      scrollTrigger: { 
+        trigger: '.pricing__grid', 
+        start: 'top bottom',
+        toggleActions: 'play none none none'
+      },
+      y: 30, 
+      opacity: 0, 
+      stagger: 0.12, 
+      duration: 0.6, 
+      ease: 'power3.out',
+      clearProps: 'all'
+    });
+  }
 
   // 6b. Números credibility - contador animado
   gsap.utils.toArray('.credibility__number').forEach(el => {
@@ -62,7 +70,7 @@ document.fonts.ready.then(() => {
       
       gsap.to(tempObj, {
         val: finalValue,
-        scrollTrigger: { trigger: el, start: 'top 85%' },
+        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
         duration: 2,
         ease: 'power2.out',
         onUpdate: function() {
@@ -109,10 +117,14 @@ document.fonts.ready.then(() => {
     gsap.from(el, {
       scrollTrigger: { 
         trigger: el, 
-        start: 'top 95%',
-        once: true
+        start: 'top bottom',
+        toggleActions: 'play none none none'
       },
-      y: 20, opacity: 0, duration: 0.6, ease: 'power2.out'
+      y: 20, 
+      opacity: 0, 
+      duration: 0.6, 
+      ease: 'power2.out',
+      clearProps: 'all'
     });
   });
 
