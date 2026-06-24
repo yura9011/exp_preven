@@ -1377,6 +1377,17 @@ a { text-decoration: none; color: inherit; }
   .hero {
     min-height: 100vh;
   }
+  .hero__photo img {
+    object-position: center center;
+  }
+  .hero__photo-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(10,15,30,0.75) 0%,
+      rgba(10,15,30,0.65) 50%,
+      rgba(10,15,30,0.45) 100%
+    );
+  }
   .hero__panel {
     padding: 28px 20px;
     margin: 32px 0;
@@ -1468,8 +1479,12 @@ a { text-decoration: none; color: inherit; }
     gap: 32px;
   }
   .discount__visual {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     order: -1;
+    max-height: 400px;
+  }
+  .discount__photo {
+    object-position: center 20%;
   }
   .discount__content .section__header--left { 
     text-align: center;
@@ -1501,8 +1516,12 @@ a { text-decoration: none; color: inherit; }
     gap: 32px;
   }
   .faq__visual { 
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 5;
     order: -1;
+    max-height: 400px;
+  }
+  .faq__photo {
+    object-position: center center;
   }
   .faq__body .section__header--left { 
     text-align: center;
@@ -1558,8 +1577,12 @@ a { text-decoration: none; color: inherit; }
     gap: 32px;
   }
   .referral__visual { 
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     order: -1;
+    max-height: 400px;
+  }
+  .referral__photo {
+    object-position: center 30%;
   }
   .referral__content .section__header--left { 
     text-align: center;
