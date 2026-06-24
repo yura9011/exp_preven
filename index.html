@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevención Salud — ICS Salud | Asesores independientes</title>
+  <meta name="description" content="Te asesoramos gratis y gestionamos tu afiliación a Prevención Salud por WhatsApp. Encontrá el plan que te conviene de verdad.">
+  <meta property="og:title" content="Tu prepaga, sin vueltas — ICS Salud">
+  <meta property="og:description" content="Asesores independientes de Prevención Salud. Te cotizamos, te asesoramos y te afiliamos, todo por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav__inner container">
+        <a href="#" class="nav__logo">ICS Salud</a>
+        <a href="#" class="nav__cta btn btn--accent btn--sm" onclick="openWhatsAppModal(event)">WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__bg-glow"></div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Tu prepaga,<br>
+          <span class="hero__title-accent">sin vueltas</span>
+        </h1>
+        <p class="hero__subtitle">
+          Somos asesores independientes de <strong>Prevención Salud</strong> &mdash; te asesoramos gratis y gestionamos todo por WhatsApp, de igual a igual.
+        </p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--accent btn--xl" onclick="openWhatsAppModal(event)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero información
+          </a>
+          <p class="hero__note">Sin compromiso. Respondemos en el día.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CREDIBILITY ===== -->
+  <section class="credibility" id="credibilidad">
+    <div class="container">
+      <div class="credibility__grid" data-animate>
+        <div class="credibility__item">
+          <span class="credibility__number">+1500</span>
+          <span class="credibility__label">afiliados gestionados</span>
+        </div>
+        <div class="credibility__divider" aria-hidden="true"></div>
+        <div class="credibility__item">
+          <span class="credibility__number">100%</span>
+          <span class="credibility__label">gestión digital</span>
+        </div>
+        <div class="credibility__divider" aria-hidden="true"></div>
+        <div class="credibility__item">
+          <span class="credibility__number">$0</span>
+          <span class="credibility__label">asesoramiento</span>
+        </div>
+        <div class="credibility__divider" aria-hidden="true"></div>
+        <div class="credibility__item">
+          <span class="credibility__number">Hoy</span>
+          <span class="credibility__label">respuesta en el día</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="precios">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <span class="section__tag">Precios</span>
+        <h2 class="section__title">Cuanto sale</h2>
+        <p class="section__desc">Precios orientativos. Varían según edad, grupo familiar y si derivás aportes.</p>
+      </div>
+      <div class="pricing__grid" data-animate>
+        <article class="pricing__card">
+          <div class="pricing__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="pricing__tag">Joven solo</span>
+          <span class="pricing__edad">18 a 35 años</span>
+          <div class="pricing__body">
+            <div class="pricing__valor">
+              <span class="pricing__number">$40.000</span>
+              <span class="pricing__periodo">/mes</span>
+            </div>
+            <p class="pricing__desc">Plan base con buena cobertura. Ideal si arrancás solo.</p>
+          </div>
+          <a href="#" class="btn btn--outline btn--full" onclick="openWhatsAppModal(event)">Quiero saber cuánto me sale a mí</a>
+        </article>
+        <article class="pricing__card pricing__card--featured">
+          <span class="pricing__badge">Mas elegido</span>
+          <div class="pricing__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="pricing__tag">Adulto A2</span>
+          <span class="pricing__edad">Cobertura completa</span>
+          <div class="pricing__body">
+            <div class="pricing__valor">
+              <span class="pricing__number">$80.000</span>
+              <span class="pricing__periodo">/mes</span>
+            </div>
+            <p class="pricing__desc">Plan con alta cobertura. Para los que quieren estar cubiertos en todo.</p>
+          </div>
+          <a href="#" class="btn btn--primary btn--full" onclick="openWhatsAppModal(event)">Quiero saber cuánto me sale a mí</a>
+        </article>
+      </div>
+      <p class="pricing__nota" data-animate>Los primeros 3 meses tienen <strong>50% de descuento</strong>. <a href="#descuento">Ver descuento completo</a></p>
+    </div>
+  </section>
+
+  <!-- ===== DISCOUNT ===== -->
+  <section class="discount" id="descuento">
+    <div class="discount__bg" aria-hidden="true">
+      <div class="discount__grid"></div>
+    </div>
+    <div class="container">
+      <div class="section__header section__header--light" data-animate>
+        <span class="section__tag section__tag--light">Descuento real</span>
+        <h2 class="section__title section__title--light">El descuento real</h2>
+        <p class="section__desc section__desc--light">No es una promo de ocasión &mdash; es la forma en que Prevención Salud incorpora nuevos afiliados.</p>
+      </div>
+      <div class="discount__timeline" data-animate>
+        <div class="discount__step">
+          <span class="discount__pct">50%</span>
+          <span class="discount__info">los primeros 3 meses</span>
+        </div>
+        <div class="discount__connector" aria-hidden="true">
+          <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
+            <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="discount__step">
+          <span class="discount__pct">30%</span>
+          <span class="discount__info">los siguientes 3 meses</span>
+        </div>
+        <div class="discount__connector" aria-hidden="true">
+          <svg width="40" height="8" viewBox="0 0 40 8" fill="none">
+            <path d="M0 4H38M38 4L32 1M38 4L32 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="discount__step">
+          <span class="discount__pct">15%</span>
+          <span class="discount__info">los últimos 3 meses</span>
+        </div>
+      </div>
+      <div class="discount__conditions" data-animate>
+        <span class="discount__conditions-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </span>
+        <span><strong>Requisitos:</strong> derivar aportes (monotributo o relación de dependencia) y ser menor de 55 años.</span>
+      </div>
+      <div class="discount__action" data-animate>
+        <a href="#" class="btn btn--accent btn--lg" onclick="openWhatsAppModal(event)">Quiero aprovechar el descuento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="cambio">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <span class="section__tag">Venis de otra prepaga</span>
+        <h2 class="section__title">Respondemos tus dudas</h2>
+        <p class="section__desc">Las preguntas que te frenan, respondidas rápido.</p>
+      </div>
+      <div class="faq__grid" data-animate>
+        <article class="faq__item">
+          <div class="faq__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <div class="faq__content">
+            <h3 class="faq__q">Pierdo días de cobertura</h3>
+            <p class="faq__a">No. La cobertura es continua si gestionamos el pase correctamente. Nosotros nos encargamos de que no haya ningún salto.</p>
+          </div>
+        </article>
+        <article class="faq__item">
+          <div class="faq__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="faq__content">
+            <h3 class="faq__q">Qué pasa si tengo una patología</h3>
+            <p class="faq__a">Depende del caso. Te asesoramos sin compromiso y vemos qué opciones tenés. No hay obligación de nada.</p>
+          </div>
+        </article>
+        <article class="faq__item">
+          <div class="faq__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="faq__content">
+            <h3 class="faq__q">Es mucho trámite</h3>
+            <p class="faq__a">Nosotros hacemos todo. Vos solo firmás lo que corresponde y listo. No te llenamos de papeles.</p>
+          </div>
+        </article>
+      </div>
+      <div class="faq__action" data-animate>
+        <a href="#" class="btn btn--accent" onclick="openWhatsAppModal(event)">Consultame sin compromiso</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS ===== -->
+  <section class="steps" id="como-funciona">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <span class="section__tag">Cómo funciona</span>
+        <h2 class="section__title">Así de simple</h2>
+        <p class="section__desc">Tres pasos y ya estás listo. Sin vueltas, sin papelerío.</p>
+      </div>
+      <div class="steps__grid" data-animate>
+        <div class="steps__card">
+          <div class="steps__num">
+            <span>1</span>
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
+              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+            </svg>
+          </div>
+          <h3 class="steps__title">Me mandás un mensaje</h3>
+          <p class="steps__desc">Me contás tu situación y lo que estás buscando, sin vueltas. En criollo, sin formularios.</p>
+        </div>
+        <div class="steps__arrow" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+        <div class="steps__card">
+          <div class="steps__num">
+            <span>2</span>
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
+              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+            </svg>
+          </div>
+          <h3 class="steps__title">Te cotizo los planes</h3>
+          <p class="steps__desc">Te paso los planes que realmente te convienen según tu caso, no todo el catálogo.</p>
+        </div>
+        <div class="steps__arrow" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+        <div class="steps__card">
+          <div class="steps__num">
+            <span>3</span>
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="steps__num-ring">
+              <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"></circle>
+            </svg>
+          </div>
+          <h3 class="steps__title">Gestionamos el alta</h3>
+          <p class="steps__desc">Nos encargamos de todo el papeleo con Prevención Salud. Vos no hacés nada más que firmar.</p>
+        </div>
+      </div>
+      <div class="steps__action" data-animate>
+        <a href="#" class="btn btn--primary btn--lg" onclick="openWhatsAppModal(event)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Mandame un mensaje
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REFERRAL ===== -->
+  <section class="referral" id="referidos">
+    <div class="container">
+      <div class="section__header" data-animate>
+        <span class="section__tag">Referidos</span>
+        <h2 class="section__title">Ganá con nosotros</h2>
+        <p class="section__desc">Si conocés a alguien que necesite prepaga, te conviene contárselo.</p>
+      </div>
+      <div class="referral__card" data-animate>
+        <div class="referral__gift">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M12 7V4M12 4C12 2 14 2 14 4s-2 3-2 3M12 4C12 2 10 2 10 4s2 3 2 3"/><path d="M8 7v13M16 7v13"/><path d="M3 13h18"/></svg>
+        </div>
+        <p class="referral__copy">Conocés a alguien que necesite prepaga? Te conviene contárselo.</p>
+        <div class="referral__body">
+          <p>Si referís a alguien <strong>menor de 45 años</strong> que se afilia a Prevención Salud, recibís una <strong>gift card VISA</strong>.</p>
+          <p class="referral__nota">El referido no tiene que estar en mora.</p>
+        </div>
+        <a href="#" class="btn btn--accent referral__btn" onclick="openWhatsAppModal(event)">Quiero referir a alguien</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-final" id="cta-final">
+    <div class="cta-final__bg" aria-hidden="true">
+      <div class="cta-final__grid"></div>
+      <div class="cta-final__glow"></div>
+    </div>
+    <div class="container">
+      <div class="cta-final__content" data-animate>
+        <h2 class="cta-final__title">Dudas? Escribime,<br>no comprometés nada</h2>
+        <p class="cta-final__desc">Te respondo al toque y vemos si te conviene o no. Si no es para vos, no pasa nada.</p>
+        <a href="#" class="btn btn--accent btn--xl" onclick="openWhatsAppModal(event)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Abrir WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <span class="footer__logo">ICS Salud</span>
+          <span class="footer__tagline"> &middot; Asesores independientes de Prevención Salud</span>
+        </div>
+        <div class="footer__meta">
+          <span>Todos los derechos reservados</span>
+          <a href="https://wa.me/542613632150" class="footer__whatsapp" target="_blank" rel="noopener">+54 261 363 2150</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="openWhatsAppModal(event)" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ===== WHATSAPP MODAL ===== -->
+  <div class="modal" id="whatsappModal" onclick="closeWhatsAppModalOutside(event)">
+    <div class="modal__overlay" aria-hidden="true"></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" onclick="closeWhatsAppModal()" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__body">
+        <h3 class="modal__title" id="modal-title">Decinos cuál es tu caso</h3>
+        <p class="modal__desc">Elegí la opción que mejor describa tu situación y te mandamos el mensaje listo.</p>
+        <div class="modal__options">
+          <button class="modal__option" onclick="sendWhatsApp('Hola, quiero información sobre planes de Prevención Salud')">
+            <div class="modal__option-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <div class="modal__option-text">
+              <span class="modal__option-label">No sé bien, quiero info general</span>
+              <span class="modal__option-msg">Mensaje genérico</span>
+            </div>
+          </button>
+          <button class="modal__option" onclick="sendWhatsApp('Hola, soy monotributista y quiero cotizar un plan')">
+            <div class="modal__option-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="modal__option-text">
+              <span class="modal__option-label">Soy monotributista</span>
+              <span class="modal__option-msg">Quiero cotizar un plan</span>
+            </div>
+          </button>
+          <button class="modal__option" onclick="sendWhatsApp('Hola, quiero cotizar un plan para mi grupo familiar')">
+            <div class="modal__option-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="modal__option-text">
+              <span class="modal__option-label">Quiero un plan familiar</span>
+              <span class="modal__option-msg">Para mí y mi familia</span>
+            </div>
+          </button>
+          <button class="modal__option" onclick="sendWhatsApp('Hola, estoy en otra prepaga y quiero ver si me conviene cambiar')">
+            <div class="modal__option-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="modal__option-text">
+              <span class="modal__option-label">Estoy en otra prepaga</span>
+              <span class="modal__option-msg">Quiero ver si me conviene cambiar</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
