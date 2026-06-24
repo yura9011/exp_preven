@@ -24,19 +24,21 @@ lenis.on('scroll', ({ scroll }) => {
   header.classList.toggle('scrolled', scroll > 60);
 });
 
-if (!reduceMotion) {
+// 5. Esperar a que las fuentes carguen antes de SplitText
+document.fonts.ready.then(() => {
+  if (!reduceMotion) {
 
-  // 5. Hero entrance
-  const heroTitle = new SplitText('.hero__title', { type: 'chars, words' });
-  const tl = gsap.timeline({ delay: 0.1 });
-  tl.from(heroTitle.chars, {
-    y: 80, opacity: 0, rotateX: -30,
-    stagger: 0.018, duration: 0.8, ease: 'power4.out'
-  })
-  .from('.hero__ticker', { y: 16, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0)
-  .from('.hero__subtitle', { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out' }, 0.4)
-  .from('.hero__actions', { y: 20, opacity: 0, duration: 0.5, ease: 'back.out(1.4)' }, 0.6)
-  .from('.hero__panel', { x: -30, opacity: 0, duration: 0.9, ease: 'power3.out' }, 0);
+    // 5. Hero entrance
+    const heroTitle = new SplitText('.hero__title', { type: 'chars, words' });
+    const tl = gsap.timeline({ delay: 0.1 });
+    tl.from(heroTitle.chars, {
+      y: 80, opacity: 0, rotateX: -30,
+      stagger: 0.018, duration: 0.8, ease: 'power4.out'
+    })
+    .from('.hero__ticker', { y: 16, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0)
+    .from('.hero__subtitle', { y: 24, opacity: 0, duration: 0.6, ease: 'power3.out' }, 0.4)
+    .from('.hero__actions', { y: 20, opacity: 0, duration: 0.5, ease: 'back.out(1.4)' }, 0.6)
+    .from('.hero__panel', { x: -30, opacity: 0, duration: 0.9, ease: 'power3.out' }, 0);
 
   // 6. Price cards
   gsap.from('.pricing__card', {
@@ -106,7 +108,8 @@ if (!reduceMotion) {
     });
   });
 
-}
+  }
+});
 
 // ---- Pricing Card Selection --------------------------------
 
