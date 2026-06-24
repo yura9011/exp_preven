@@ -42,7 +42,11 @@ document.fonts.ready.then(() => {
 
   // 6. Price cards
   gsap.from('.pricing__card', {
-    scrollTrigger: { trigger: '.pricing__grid', start: 'top 85%' },
+    scrollTrigger: { 
+      trigger: '.pricing__grid', 
+      start: 'top 95%',
+      once: true
+    },
     y: 30, opacity: 0, stagger: 0.12, duration: 0.6, ease: 'power3.out'
   });
 
@@ -103,7 +107,11 @@ document.fonts.ready.then(() => {
   // 10. Generic data-animate
   gsap.utils.toArray('[data-animate]').forEach(el => {
     gsap.from(el, {
-      scrollTrigger: { trigger: el, start: 'top 90%' },
+      scrollTrigger: { 
+        trigger: el, 
+        start: 'top 95%',
+        once: true
+      },
       y: 20, opacity: 0, duration: 0.6, ease: 'power2.out'
     });
   });
