@@ -274,6 +274,78 @@ faqItems.forEach(item => {
   });
 });
 
+// ---- Referral Modal ----------------------------------------
+
+const referralModal = document.getElementById('referralModal');
+
+function openReferralModal(e) {
+  if (e) e.preventDefault();
+  referralModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Focus al primer campo
+  setTimeout(() => {
+    document.getElementById('ref-nombre').focus();
+  }, 100);
+}
+
+function closeReferralModal() {
+  referralModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeReferralModalOutside(e) {
+  if (e.target === referralModal || e.target.classList.contains('modal__overlay')) {
+    closeReferralModal();
+  }
+}
+
+function sendReferralWhatsApp(e) {
+  e.preventDefault();
+  const form = e.target;
+
+  const nombre   = form.nombre.value.trim();
+  const telefono = form.telefono.value.trim();
+  const mail     = form.mail.value.trim();
+  const dni      = form.dni.value.trim();
+
+  // Validación básica
+  if (!nombre || !telefono || !mail || !dni) {
+    // Marcar campos vacíos
+    [form.nombre, form.telefono, form.mail, form.dni].forEach(field => {
+      if (!field.value.trim()) field.focus();
+    });
+    return;
+  }
+
+  const msg =
+`🎁 *Nuevo referido ICS Salud*
+
+🌐 *Nombre:* ${nombre}
+📞 *Teléfono:* ${telefono}
+✉️ *Mail:* ${mail}
+🪪 *DNI:* ${dni}
+
+_Enviado desde el formulario de referidos de la web_`;
+
+  window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
+  closeReferralModal();
+  form.reset();
+}
+
+// ESC cierra referral modal también
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeWhatsAppModal();
+    closeReferralModal();
+  }
+});
+
+// Expose
+window.openReferralModal          = openReferralModal;
+window.closeReferralModal         = closeReferralModal;
+window.closeReferralModalOutside  = closeReferralModalOutside;
+window.sendReferralWhatsApp       = sendReferralWhatsApp;
+
 // ---- WhatsApp Modal ----------------------------------------
 
 const modal   = document.getElementById('whatsappModal');
