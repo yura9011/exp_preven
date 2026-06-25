@@ -424,6 +424,68 @@ a { text-decoration: none; color: inherit; }
 
 .credibility__divider { display: none; }
 
+/* ---- Partners / Establecimientos ------------------------- */
+.partners {
+  background: var(--bg);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.partners__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  transition: box-shadow 200ms, border-color 200ms, transform 200ms;
+}
+
+.partners__item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.partners__item img {
+  max-height: 52px;
+  width: 100%;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 200ms, opacity 200ms;
+}
+
+.partners__item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.partners__item--text {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.partners__item--text span {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
 /* ---- Pricing ---------------------------------------------- */
 .pricing {
   background: var(--bg);
@@ -1449,6 +1511,23 @@ a { text-decoration: none; color: inherit; }
   }
   .section__desc {
     font-size: 15px;
+  }
+
+  /* Partners */
+  .partners { padding: 56px 0; }
+  .partners__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .partners__item {
+    min-height: 72px;
+    padding: 14px 10px;
+  }
+  .partners__item img {
+    max-height: 40px;
+  }
+  .partners__item--text span {
+    font-size: 10px;
   }
 
   /* Pricing */
