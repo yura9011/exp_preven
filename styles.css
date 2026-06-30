@@ -409,6 +409,13 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: -1px;
 }
 
+/* Texto largo como "Asesoramiento" necesita tamaño menor */
+.credibility__number--sm {
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
 .credibility__label {
   font-size: 13px;
   font-weight: 600;
