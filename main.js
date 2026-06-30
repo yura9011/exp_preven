@@ -61,20 +61,21 @@ document.fonts.ready.then(() => {
   // 6b. Números credibility - contador animado
   gsap.utils.toArray('.credibility__number').forEach(el => {
     const text = el.textContent.trim();
-    const isNumber = text.match(/\d+/);
-    
-    if (isNumber) {
-      const finalValue = parseInt(isNumber[0]);
+    const match = text.match(/^(\+?)(\d+)(.*)$/);
+
+    if (match) {
+      const prefix  = match[1]; // "+" o ""
+      const finalValue = parseInt(match[2]);
+      const suffix  = match[3]; // "%", "hs", etc.
       const tempObj = { val: 0 };
-      const prefix = text.includes('+') ? '+' : '';
-      
+
       gsap.to(tempObj, {
         val: finalValue,
         scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
         duration: 2,
         ease: 'power2.out',
         onUpdate: function() {
-          el.textContent = prefix + Math.round(tempObj.val);
+          el.textContent = prefix + Math.round(tempObj.val) + suffix;
         }
       });
     }
