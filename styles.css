@@ -358,8 +358,8 @@ a { text-decoration: none; color: inherit; }
 
 .credibility__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1040px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 780px;
   margin-inline: auto;
   gap: 0;
 }
@@ -1484,29 +1484,20 @@ a { text-decoration: none; color: inherit; }
     width: 100%;
   }
 
-  /* Credibility — 2x2 */
+  /* Credibility — fila única en mobile */
   .credibility { padding: 32px 0; }
   .credibility__grid { 
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 0;
   }
   .credibility__item {
     border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 24px 16px;
+    border-bottom: none;
+    padding: 20px 10px;
   }
-  .credibility__item:nth-child(2n) { border-right: none; }
-  .credibility__item:nth-last-child(-n+2) { border-bottom: none; }
-  .credibility__number { font-size: 44px; }
-  .credibility__label { font-size: 11px; max-width: 100px; }
-  /* Deshabilitar hover effects en mobile */
-  .credibility__item:hover {
-    transform: none;
-    background: transparent;
-  }
-  .credibility__item::after {
-    display: none;
-  }
+  .credibility__item:last-child { border-right: none; }
+  .credibility__number { font-size: 32px; }
+  .credibility__label { font-size: 10px; max-width: 90px; }
 
   /* Section headers */
   .section__header {
