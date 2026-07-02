@@ -3,6 +3,13 @@
    GSAP 3 + ScrollTrigger + SplitText + Lenis smooth scroll
    ============================================================ */
 
+// 0. Forzar scroll al top al cargar — evita que el navegador
+//    recuerde posición anterior o que un #hash salte a mitad de página
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // 1. Lenis smooth scroll
 const lenis = new Lenis({
   lerp: 0.075,
