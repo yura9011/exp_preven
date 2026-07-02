@@ -350,7 +350,7 @@ window.sendReferralWhatsApp       = sendReferralWhatsApp;
 // ---- WhatsApp Modal ----------------------------------------
 
 const modal   = document.getElementById('whatsappModal');
-const WA_NUM  = '542613632150';
+const WA_NUM  = '542613868614';
 
 function openWhatsAppModal(e) {
   if (e) e.preventDefault();

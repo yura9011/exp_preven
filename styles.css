@@ -841,6 +841,80 @@ a { text-decoration: none; color: inherit; }
   will-change: transform;
 }
 
+/* Descuento principal - número grande */
+.discount__main {
+  margin-bottom: 24px;
+}
+
+.discount__pct-big {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.discount__pct-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 96px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.discount__pct-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+  max-width: 140px;
+}
+
+.discount__pct-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0;
+}
+
+/* Pills de planes */
+.discount__plans {
+  margin-bottom: 24px;
+}
+
+.discount__plans-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.discount__plans-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.discount__plan-pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+.discount__plan-pill--accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* Timeline: 3 rows stacked — más legible en media columna */
 .discount__timeline {
   display: flex;
@@ -1585,6 +1659,12 @@ a { text-decoration: none; color: inherit; }
   .discount__action {
     text-align: center;
   }
+  .discount__pct-num { font-size: 72px; }
+  .discount__pct-label { font-size: 16px; max-width: 120px; }
+  .discount__main { text-align: center; }
+  .discount__pct-big { justify-content: center; }
+  .discount__plans { text-align: center; }
+  .discount__plans-grid { justify-content: center; }
 
   /* FAQ */
   .faq { padding: 64px 0; }
